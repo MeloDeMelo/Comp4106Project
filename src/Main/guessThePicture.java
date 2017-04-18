@@ -39,12 +39,14 @@ public class guessThePicture {
     }
 
     public void randomPopulationInit(){
+        Color color;
         population = new BufferedImage[POPULATION_COUNT];
         for(int i = 0; i < POPULATION_COUNT; i ++){
             population[i] = new BufferedImage(width, height, TYPE_INT_ARGB);
             for(int x = 0; x < width; x ++){
                 for(int y = 0; y < height; y ++){
-                    population[i].setRGB(x, y, intialPicture.getRGB(x,y));
+                    color = new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+                    population[i].setRGB(x, y, color.getRGB());
                 }
             }
             try{
@@ -54,6 +56,24 @@ public class guessThePicture {
                 e.printStackTrace();
             }
         }
+    }
+
+    public double precentDifferencePicture(int populationNum){
+        double total = 0;
+        for(int y  = 0; y < height; y ++){
+            for(int x = 0; x < width; x ++){
+                total += precentDifferencePixel(x, y, populationNum);
+            }
+        }
+        return total / (height*width) * 100;
+    }
+
+    private double precentDifferencePixel(int x, int y, int populationNum){
+        Color c1 = new Color(intialPicture.getRGB(x,y)), c2 = new Color (population[populationNum].getRGB(x,y));
+        double pctDiffRed = (Math.abs(c1.getRed() - c2.getRed())) / 255;
+        double pctDiffGreen = (Math.abs(c1.getGreen() - c2.getGreen())) / 255;
+        double pctDiffBlue = (Math.abs(c1.getBlue() - c2.getBlue())) / 255;
+        return (pctDiffRed + pctDiffBlue + pctDiffGreen) / 3 * 100;
     }
 
     public int getRGB(int x, int y){
