@@ -33,7 +33,28 @@ public class guessThePictureTest {
     @Test
     public void compareTest(){
         for(int i = 0; i < 5; i ++){
-            System.out.println("Population " + (i + 1) + " is " + gtp.precentDifferencePicture(i) + "% the same");
+            System.out.println("Population " + (i + 1) + " is " + gtp.precentDifferencePicture(gtp.getIntialPicture(), gtp.getPopulation(i)) + "% the same");
         }
+    }
+
+    @Test
+    public void newGenerationTest(){
+        int numOfGenerations = 100;
+        for(int i = 1; i < numOfGenerations; i ++){
+            System.out.println("On generation " + i);
+            gtp.newGeneration();
+            int alphaIndex = 0;
+            double alphaValue = gtp.precentDifferencePicture(gtp.getIntialPicture(), gtp.getPopulation(0));
+            for(int q = 1; q < gtp.getPOPULATION_COUNT(); q ++){
+                if (gtp.precentDifferencePicture(gtp.getIntialPicture(), gtp.getPopulation(q)) > alphaValue){
+                    alphaIndex = q;
+                    alphaValue = gtp.precentDifferencePicture(gtp.getIntialPicture(), gtp.getPopulation(q));
+                }
+            }
+
+            System.out.println("The alpha of generation " + i + " is " + (alphaIndex + 1) + " with a percentage of " + alphaValue + "%\n");
+        }
+
+
     }
 }
