@@ -1,6 +1,7 @@
 package Main;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -15,26 +16,32 @@ import static java.awt.image.BufferedImage.TYPE_INT_ARGB;
 public class guessThePicture {
 
     private final int POPULATION_COUNT = 20;
+    private final int K = 5;    //number picked during tournament selection
+    private final int MUTATION_THRESHOLD = 100;    // 1 in a 1000 to mutate
     private final Random random = new Random();
+    private final Mutator mutator = new Mutator(random);
 
     private String directory;
-    private BufferedImage intialPicture;
+    private BufferedImage initialPicture;
     private BufferedImage[] population;
     private int height, width;
 
-    public guessThePicture(){
+    public guessThePicture(boolean randomData, String phtotoName){
         directory = System.getProperty("user.dir");
         directory = directory + "\\Pictures";
         try{
-        this.intialPicture = ImageIO.read(new File(directory + "\\intialPictures\\Blitz.png"));
+        this.initialPicture = ImageIO.read(new File(directory + "\\intialPictures\\" + phtotoName));
         }catch(IOException e){
             e.printStackTrace();
         }
 
-        this.height = intialPicture.getHeight();
-        this.width = intialPicture.getWidth();
+        this.height = initialPicture.getHeight();
+        this.width = initialPicture.getWidth();
 
-        randomPopulationInit();
+        if(randomData)
+            randomPopulationInit();
+        //else
+            //choosenPopulationInit();
 
     }
 
@@ -50,10 +57,10 @@ public class guessThePicture {
                 }
             }
         }
-        savepopulation();
+        savePopulation();
     }
 
-    private void savepopulation() {
+    private void savePopulation() {
         for (int i = 0; i < POPULATION_COUNT; i++) {
             try {
                 File outputfile = new File(directory + "\\population\\Population_" + (i + 1) + ".jpg");
@@ -69,87 +76,149 @@ public class guessThePicture {
 
         for(int y = 0; y < height; y ++){
             for(int x = 0; x < width; x++){
-                int mating = random.nextInt(1000) + 1;
-                if(mating <= 750){
-                    if(precentDifferencePixel(x, y, intialPicture, father) > precentDifferencePixel(x, y, intialPicture, mother))
-                        child.setRGB(x, y, father.getRGB(x,y));
-                    else
-                        child.setRGB(x, y, mother.getRGB(x,y));
-                }
-                else if(mating <= 870){
+                int mating = random.nextInt(MUTATION_THRESHOLD);
+                int mutate = random.nextInt(MUTATION_THRESHOLD);
+                if(mutate == mating)
+                    child.setRGB(x, y, mutator.mutantPixel());
+                else if(mating < MUTATION_THRESHOLD/2)
                     child.setRGB(x, y, father.getRGB(x,y));
-                }
-                else if(mating <= 999){
+                else
                     child.setRGB(x, y, mother.getRGB(x,y));
-                }
-                else{
-                    child.setRGB(x, y, intialPicture.getRGB(x,y));
-                }
             }
         }
 
         return child;
     }
 
-    public void newGeneration(){
-        BufferedImage[] prevPopulation = population;
-        population = new BufferedImage[POPULATION_COUNT];
-
-        int alphaIndex = 0;
-        double alphaValue = precentDifferencePicture(intialPicture, prevPopulation[0]);
-        for(int i = 1; i < POPULATION_COUNT; i ++){
-            if (precentDifferencePicture(intialPicture, prevPopulation[i]) > alphaValue){
-                alphaIndex = i;
-                alphaValue = precentDifferencePicture(intialPicture, prevPopulation[i]);
-            }
+    public void newGenerations(int numberOfGenerations){
+        for(int i = 0; i < numberOfGenerations; i ++) {
+            newGeneration();
+            System.out.println("Gen: " + (i+ 1));
         }
-
-        for(int i = 0; i < POPULATION_COUNT; i ++){
-            int mateWithAlpha = random.nextInt(100);
-            if ((i != alphaIndex) && (mateWithAlpha <= 30)) {
-                    population[i] = mate(prevPopulation[alphaIndex], prevPopulation[i]);
-            }
-            else {
-                int fatherIndex = random.nextInt(POPULATION_COUNT);
-                int motherIndex;
-                do {
-                    motherIndex = random.nextInt(POPULATION_COUNT);
-                } while (fatherIndex != motherIndex);
-
-                population[i] = mate(prevPopulation[fatherIndex], prevPopulation[motherIndex]);
-            }
-        }
-        savepopulation();
+        savePopulation();
     }
 
-    public double precentDifferencePicture(BufferedImage picture1, BufferedImage picture2){
+    public void newGeneration(){
+        BufferedImage[] newPopulation = new BufferedImage[POPULATION_COUNT];
+
+        int start;
+        int superMutation = random.nextInt(MUTATION_THRESHOLD) + 1;
+        //runt mutated into new population
+        if(superMutation > (MUTATION_THRESHOLD - 1)){
+            start = 1;
+            int runtIndex = findRunt();
+            newPopulation[0] = mutator.mutate(population[runtIndex]);
+        }//no full mutations
+        else
+            start = 0;
+
+        for(int i = start; i < POPULATION_COUNT; i ++){
+            int father = tournamentSelection();
+            newPopulation[i] = mate(population[father], population[tournamentSelection(father)]);
+        }
+
+        population = newPopulation;
+    }
+
+    private int findRunt(){
+        int runtIndex = 0;
+        double runtStrength = percentDifferencePicture(population[0]);
+        for(int i = 1; i < POPULATION_COUNT; i ++){
+            if(runtStrength > percentDifferencePicture(population[i])){
+                runtIndex = i;
+                runtStrength = percentDifferencePicture(population[i]);
+            }
+        }
+        return runtIndex;
+    }
+
+    private int tournamentSelection(int firstParent){
+        int[] selected = new int[K];
+        boolean cantSelect;
+        do {
+            selected[0] = random.nextInt(POPULATION_COUNT);
+        }while(selected[0] == firstParent);
+
+        for(int i = 0; i < selected.length; i++){
+            do{
+                cantSelect = false;
+                selected[i] = random.nextInt(POPULATION_COUNT);
+                for(int k = 1; k < i; k ++){
+                    if((selected[i] == selected[k]) && (selected[i] == firstParent)){
+                        cantSelect = true;
+                        continue;
+                    }
+                }
+            }while(cantSelect);
+        }
+
+        int alphaIndex = 0;
+        for(int i = 1; i < selected.length; i ++){
+            if(percentDifferencePicture(population[selected[alphaIndex]]) < percentDifferencePicture(population[selected[i]]))
+                alphaIndex = i;
+        }
+
+        return selected[alphaIndex];
+    }
+
+    private int tournamentSelection(){
+        int[] selected = new int[K];
+        boolean cantSelect;
+        selected[0] = random.nextInt(POPULATION_COUNT);
+        for(int i = 0; i < selected.length; i++){
+            do{
+                cantSelect = false;
+                selected[i] = random.nextInt(POPULATION_COUNT);
+                for(int k = 1; k < i; k ++){
+                    if(selected[i] == selected[k]) {
+                        cantSelect = true;
+                        continue;
+                    }
+                }
+            }while(cantSelect);
+        }
+
+        int alphaIndex = 0;
+        for(int i = 1; i < selected.length; i ++){
+            if(percentDifferencePicture(population[selected[alphaIndex]]) < percentDifferencePicture(population[selected[i]]))
+                alphaIndex = i;
+        }
+
+        return selected[alphaIndex];
+    }
+
+    public double percentDifferencePicture(BufferedImage picture1){
+        return percentDifferencePicture(picture1, initialPicture);
+    }
+
+    public double percentDifferencePicture(BufferedImage picture1, BufferedImage picture2){
         double total = 0;
         for(int y  = 0; y < height; y ++){
             for(int x = 0; x < width; x ++){
-                total += precentDifferencePixel(x, y, picture1, picture2);
+                total += percentDifferencePixel(x, y, picture1, picture2);
             }
         }
-        return total / (height*width) * 100;
+        return total / (height*width);
     }
 
-    private double precentDifferencePixel(int x, int y, BufferedImage picture1, BufferedImage picture2){
+    private double percentDifferencePixel(int x, int y, BufferedImage picture1, BufferedImage picture2){
         Color c1 = new Color(picture1.getRGB(x,y)), c2 = new Color (picture2.getRGB(x,y));
-        double pctDiffRed = (Math.abs(c1.getRed() - c2.getRed())) / 255;
-        double pctDiffGreen = (Math.abs(c1.getGreen() - c2.getGreen())) / 255;
-        double pctDiffBlue = (Math.abs(c1.getBlue() - c2.getBlue())) / 255;
-        return (pctDiffRed + pctDiffBlue + pctDiffGreen) / 3 * 100;
+        double pctDiffRed = ((Math.abs((double)c1.getRed() - (double)c2.getRed())) / 255);
+        double pctDiffGreen = (Math.abs((double)c1.getGreen() - (double)c2.getGreen())) / 255;
+        double pctDiffBlue = (Math.abs((double)c1.getBlue() - (double)c2.getBlue())) / 255;
+        return (100 - ((pctDiffRed + pctDiffBlue + pctDiffGreen) / 3 * 100));
     }
 
     public int getRGB(int x, int y){
-        return intialPicture.getRGB(x,y);
+        return initialPicture.getRGB(x,y);
     }
 
     public int getPOPULATION_COUNT(){
         return POPULATION_COUNT;
     }
 
-    public BufferedImage getIntialPicture(){
-        return intialPicture;
+    public BufferedImage getInitialPicture(){
+        return initialPicture;
     }
 
     public BufferedImage getPopulation(int index){

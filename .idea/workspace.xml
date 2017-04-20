@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fad74ee-3a72-4330-87e9-8bafa3203fbd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Main/Mutator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main/guessThePicture.java" afterPath="$PROJECT_DIR$/src/Main/guessThePicture.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/guessThePictureTest.java" afterPath="$PROJECT_DIR$/src/Test/guessThePictureTest.java" />
     </list>
@@ -13,36 +15,39 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/MiniCapStone$guessThePictureTest_compareTest.coverage" NAME="guessThePictureTest.compareTest Coverage Results" MODIFIED="1492637244242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="guessThePicture.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="guessThePicture.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main/guessThePicture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="28" column="91" lean-forward="false" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
+            <state relative-caret-position="482">
+              <caret line="42" column="10" lean-forward="false" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5202#5203#0" expanded="true" />
-                <element signature="e#5241#5242#0" expanded="true" />
-                <element signature="e#5287#5288#0" expanded="true" />
-                <element signature="e#5323#5324#0" expanded="true" />
-                <element signature="e#5375#5376#0" expanded="true" />
-                <element signature="e#5415#5416#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageIO.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/javax/imageio/ImageIO.java">
+      <file leaf-file-name="Mutator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main/Mutator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="1300" column="0" lean-forward="false" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="431">
+              <caret line="37" column="19" lean-forward="false" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#214#215#0" expanded="true" />
+                <element signature="e#250#251#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,8 +55,8 @@
       <file leaf-file-name="guessThePictureTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test/guessThePictureTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="552">
+              <caret line="43" column="36" lean-forward="false" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,6 +73,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>percentDifferencePicture</find>
+      <find>savePopulation</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -80,8 +91,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/guessThePicture.java" />
-        <option value="$PROJECT_DIR$/src/Test/guessThePictureTest.java" />
+        <option value="$PROJECT_DIR$/src/Main/Mutator.java" />
         <option value="$PROJECT_DIR$/src/Main/guessThePicture.java" />
+        <option value="$PROJECT_DIR$/src/Test/guessThePictureTest.java" />
       </list>
     </option>
   </component>
@@ -92,10 +104,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1688" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -113,8 +125,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -165,7 +175,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -661,7 +673,8 @@
       <updated>1492484364215</updated>
       <workItem from="1492484368375" duration="8990000" />
       <workItem from="1492534954499" duration="601000" />
-      <workItem from="1492535849757" duration="9207000" />
+      <workItem from="1492535849757" duration="9266000" />
+      <workItem from="1492626967513" duration="13136000" />
     </task>
     <task id="LOCAL-00001" summary="Project init">
       <created>1492484781259</created>
@@ -674,42 +687,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 16h 49m 18s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 17h 38m 11s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 16h 55m 23s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 17h 38m 44s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 17h 13m 03s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 17h 39m 50s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 17h 17m 16s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 17h 45m 23s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 17h 19m 25s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 17h 51m 48s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 17h 22m 17s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 17h 52m 45s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 17h 23m 51s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 18h 22m 07s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 17h 24m 18s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 18h 32m 05s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 17h 29m 25s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 20h 03m 40s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.18 at 17h 33m 16s.xml">
+    <history-entry file="guessThePictureTest_newGenerationTest - 2017.04.19 at 20h 13m 11s.xml">
       <configuration name="guessThePictureTest.newGenerationTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18798000" />
+    <option name="totallyTimeSpent" value="31993000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1688" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -722,19 +735,20 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3264192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3255814" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12678571" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1265625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -754,7 +768,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Project init" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -768,12 +784,83 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5202#5203#0" expanded="true" />
-            <element signature="e#5241#5242#0" expanded="true" />
-            <element signature="e#5287#5288#0" expanded="true" />
-            <element signature="e#5323#5324#0" expanded="true" />
-            <element signature="e#5375#5376#0" expanded="true" />
-            <element signature="e#5415#5416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/javax/imageio/ImageIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22100">
+          <caret line="1300" column="0" lean-forward="false" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#57783#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3445#3446#0" expanded="false" />
+            <element signature="e#3507#3508#0" expanded="false" />
+            <element signature="e#3918#3919#0" expanded="false" />
+            <element signature="e#3957#3958#0" expanded="false" />
+            <element signature="e#4010#4011#0" expanded="false" />
+            <element signature="e#4058#4059#0" expanded="false" />
+            <element signature="e#4101#4102#0" expanded="false" />
+            <element signature="e#4146#4147#0" expanded="false" />
+            <element signature="e#4208#4209#0" expanded="false" />
+            <element signature="e#4268#4269#0" expanded="false" />
+            <element signature="e#4313#4314#0" expanded="false" />
+            <element signature="e#4357#4358#0" expanded="false" />
+            <element signature="e#4420#4421#0" expanded="false" />
+            <element signature="e#4478#4479#0" expanded="false" />
+            <element signature="e#8429#8430#0" expanded="false" />
+            <element signature="e#8481#8482#0" expanded="false" />
+            <element signature="e#8851#8852#0" expanded="false" />
+            <element signature="e#8902#8903#0" expanded="false" />
+            <element signature="e#10370#10371#0" expanded="false" />
+            <element signature="e#10427#10428#0" expanded="false" />
+            <element signature="e#15256#15257#0" expanded="false" />
+            <element signature="e#15315#15316#0" expanded="false" />
+            <element signature="e#15423#15424#0" expanded="false" />
+            <element signature="e#15480#15481#0" expanded="false" />
+            <element signature="e#15591#15592#0" expanded="false" />
+            <element signature="e#15651#15652#0" expanded="false" />
+            <element signature="e#17791#17792#0" expanded="false" />
+            <element signature="e#17831#17832#0" expanded="false" />
+            <element signature="e#17867#17868#0" expanded="false" />
+            <element signature="e#17912#17913#0" expanded="false" />
+            <element signature="e#18410#18411#0" expanded="false" />
+            <element signature="e#18475#18476#0" expanded="false" />
+            <element signature="e#18640#18641#0" expanded="false" />
+            <element signature="e#18682#18683#0" expanded="false" />
+            <element signature="e#28454#28455#0" expanded="false" />
+            <element signature="e#28494#28495#0" expanded="false" />
+            <element signature="e#28530#28531#0" expanded="false" />
+            <element signature="e#28575#28576#0" expanded="false" />
+            <element signature="e#29048#29049#0" expanded="false" />
+            <element signature="e#29113#29114#0" expanded="false" />
+            <element signature="e#41473#41474#0" expanded="false" />
+            <element signature="e#41513#41514#0" expanded="false" />
+            <element signature="e#41549#41550#0" expanded="false" />
+            <element signature="e#41594#41595#0" expanded="false" />
+            <element signature="e#41822#41823#0" expanded="false" />
+            <element signature="e#41887#41888#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/guessThePictureTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/guessThePicture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -794,12 +881,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5202#5203#0" expanded="true" />
-            <element signature="e#5241#5242#0" expanded="true" />
-            <element signature="e#5287#5288#0" expanded="true" />
-            <element signature="e#5323#5324#0" expanded="true" />
-            <element signature="e#5375#5376#0" expanded="true" />
-            <element signature="e#5415#5416#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -817,34 +898,89 @@
     <entry file="file://$PROJECT_DIR$/Population_0.jpg" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/javax/imageio/ImageIO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="20468">
           <caret line="1300" column="0" lean-forward="false" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/guessThePictureTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#57783#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3445#3446#0" expanded="false" />
+            <element signature="e#3507#3508#0" expanded="false" />
+            <element signature="e#3918#3919#0" expanded="false" />
+            <element signature="e#3957#3958#0" expanded="false" />
+            <element signature="e#4010#4011#0" expanded="false" />
+            <element signature="e#4058#4059#0" expanded="false" />
+            <element signature="e#4101#4102#0" expanded="false" />
+            <element signature="e#4146#4147#0" expanded="false" />
+            <element signature="e#4208#4209#0" expanded="false" />
+            <element signature="e#4268#4269#0" expanded="false" />
+            <element signature="e#4313#4314#0" expanded="false" />
+            <element signature="e#4357#4358#0" expanded="false" />
+            <element signature="e#4420#4421#0" expanded="false" />
+            <element signature="e#4478#4479#0" expanded="false" />
+            <element signature="e#8429#8430#0" expanded="false" />
+            <element signature="e#8481#8482#0" expanded="false" />
+            <element signature="e#8851#8852#0" expanded="false" />
+            <element signature="e#8902#8903#0" expanded="false" />
+            <element signature="e#10370#10371#0" expanded="false" />
+            <element signature="e#10427#10428#0" expanded="false" />
+            <element signature="e#15256#15257#0" expanded="false" />
+            <element signature="e#15315#15316#0" expanded="false" />
+            <element signature="e#15423#15424#0" expanded="false" />
+            <element signature="e#15480#15481#0" expanded="false" />
+            <element signature="e#15591#15592#0" expanded="false" />
+            <element signature="e#15651#15652#0" expanded="false" />
+            <element signature="e#17791#17792#0" expanded="false" />
+            <element signature="e#17831#17832#0" expanded="false" />
+            <element signature="e#17867#17868#0" expanded="false" />
+            <element signature="e#17912#17913#0" expanded="false" />
+            <element signature="e#18410#18411#0" expanded="false" />
+            <element signature="e#18475#18476#0" expanded="false" />
+            <element signature="e#18640#18641#0" expanded="false" />
+            <element signature="e#18682#18683#0" expanded="false" />
+            <element signature="e#28454#28455#0" expanded="false" />
+            <element signature="e#28494#28495#0" expanded="false" />
+            <element signature="e#28530#28531#0" expanded="false" />
+            <element signature="e#28575#28576#0" expanded="false" />
+            <element signature="e#29048#29049#0" expanded="false" />
+            <element signature="e#29113#29114#0" expanded="false" />
+            <element signature="e#41473#41474#0" expanded="false" />
+            <element signature="e#41513#41514#0" expanded="false" />
+            <element signature="e#41549#41550#0" expanded="false" />
+            <element signature="e#41594#41595#0" expanded="false" />
+            <element signature="e#41822#41823#0" expanded="false" />
+            <element signature="e#41887#41888#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/guessThePicture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="28" column="91" lean-forward="false" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
+        <state relative-caret-position="482">
+          <caret line="42" column="10" lean-forward="false" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5202#5203#0" expanded="true" />
-            <element signature="e#5241#5242#0" expanded="true" />
-            <element signature="e#5287#5288#0" expanded="true" />
-            <element signature="e#5323#5324#0" expanded="true" />
-            <element signature="e#5375#5376#0" expanded="true" />
-            <element signature="e#5415#5416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/guessThePictureTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="43" column="36" lean-forward="false" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Mutator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="37" column="19" lean-forward="false" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#214#215#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
           </folding>
         </state>
       </provider>
