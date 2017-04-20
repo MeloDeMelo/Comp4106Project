@@ -1,7 +1,6 @@
 package Main;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -15,9 +14,9 @@ import static java.awt.image.BufferedImage.TYPE_INT_ARGB;
  */
 public class guessThePicture {
 
-    private final int POPULATION_COUNT = 20;
+    private final int POPULATION_COUNT = 100;
     private final int K = 5;    //number picked during tournament selection
-    private final int MUTATION_THRESHOLD = 100;    // 1 in a 1000 to mutate
+    private final int MUTATION_THRESHOLD = 100;    // 1 in a 100 to mutate
     private final Random random = new Random();
     private final Mutator mutator = new Mutator(random);
 
@@ -26,11 +25,11 @@ public class guessThePicture {
     private BufferedImage[] population;
     private int height, width;
 
-    public guessThePicture(boolean randomData, String phtotoName){
+    public guessThePicture(boolean randomData, String photoName){
         directory = System.getProperty("user.dir");
         directory = directory + "\\Pictures";
         try{
-        this.initialPicture = ImageIO.read(new File(directory + "\\intialPictures\\" + phtotoName));
+        this.initialPicture = ImageIO.read(new File(directory + "\\intialPictures\\" + photoName));
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -40,9 +39,38 @@ public class guessThePicture {
 
         if(randomData)
             randomPopulationInit();
-        //else
-            //choosenPopulationInit();
+        else
+            choosenPopulationInit();
 
+    }
+
+    private BufferedImage correctSize(BufferedImage image){
+        int height = image.getHeight(), width = image.getWidth();
+        BufferedImage newImage = new BufferedImage(this.width, this.height, TYPE_INT_ARGB);
+        if(height > this.height)
+            height = this.height;
+        if(width > this.width)
+            width = this.width;
+        for(int x = 0; x < width; x ++){
+            for(int y = 0; y < height; y ++){
+                newImage.setRGB(x, y, image.getRGB(x,y));
+            }
+        }
+        return newImage;
+    }
+
+    public void choosenPopulationInit(){
+        population = new BufferedImage[POPULATION_COUNT];
+        BufferedImage buffer;
+        for(int i = 0; i < POPULATION_COUNT; i++){
+            try{
+                buffer = ImageIO.read(new File(directory + "\\population\\Population_" + (i + 1) + ".jpg"));
+                population[i] = correctSize(buffer);
+            }catch(IOException e){
+                break;
+            }
+        }
+        savePopulation();
     }
 
     public void randomPopulationInit(){

@@ -41,7 +41,7 @@ public class guessThePictureTest {
 
     @Test
     public void newGenerationTest(){
-        int numberOfGenerations = 10;
+        int numberOfGenerations = 1000;
         gtp.newGenerations(numberOfGenerations);
         int alphaIndex = 0;
         double alphaValue = gtp.percentDifferencePicture(gtp.getInitialPicture(), gtp.getPopulation(0));
